@@ -42,3 +42,6 @@ Or by calling the alias without argument to enter an interactive chat with ChatG
 ```$ chatgpt```
 
 ![chatgpt-interactive](https://imgur.com/kJTBOPB.gif)
+
+
+To end the interactive chat, use either `bye`,`quit`,`q` or `ctrl+c`.
