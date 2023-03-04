@@ -1,5 +1,7 @@
 ## ChatGPT in your shell
 
+![](https://imgur.com/JphOx3D.png)
+
 OpenAI's ChatGPT integrated into your shell.
 
 ![](https://imgur.com/J7YOzSz.png)
