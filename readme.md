@@ -31,10 +31,10 @@ Using your created alias you can call it from shell and pass your question as an
 
 ```$ chatgpt "What is the meaning of life?"```
 
-![screen1](pic.png)
+![chatgpt](https://imgur.com/3lqDq7M.gif)
 
 Or by calling the alias without argument to enter an interactive chat with ChatGPT:
 
-```chatgpt```
+```$ chatgpt```
 
-![screen1](pic.png)
+![chatgpt-interactive](https://imgur.com/kJTBOPB.gif)
