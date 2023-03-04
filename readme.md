@@ -2,6 +2,8 @@
 
 OpenAI's ChatGPT integrated into your shell.
 
+![](https://imgur.com/J7YOzSz.png)
+
 ### Description
 
 Simple python implementation of OpenAI's ChatGPT intergrated into your shell, leveraging natural language processing and low temperature parameters for focused responses from ChatGPT.
@@ -27,7 +29,7 @@ The interaction can be either calling ChatGPT from shell for one off questions, 
 
 ### Usage
 
-Using your created alias you can call it from shell and pass your question as an argument for one off questions:
+Using your chosen alias you can call it from shell and pass your question as an argument for one off questions:
 
 ```$ chatgpt "What is the meaning of life?"```
 
