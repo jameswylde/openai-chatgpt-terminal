@@ -31,7 +31,7 @@ while True:
             # Using GPT-3.5-turbo model with a temperature of 0.5 for more focused response
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
-                temperature=0.5,
+                temperature=0.7,
                 messages=messages)
             reply = response["choices"][0]["message"]["content"]
 
