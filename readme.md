@@ -27,19 +27,19 @@ The interaction can be either calling ChatGPT from shell for one off questions, 
 * Open the script and amend `openai.api_key = "API_KEY"` with your aforementioned API key and save.
 
 * Create an alias pointing at the script's location, either in your bash profile *~/.bash_profile* or *~/.bashrc* or *~/.zshrc* - i.e:
- ```alias chatgpt='python3 /path/to/chatgpt-prompt.py'```
+ ```alias genie='python3 /path/to/genie.py'```
 
 ### Usage
 
 Using your chosen alias you can call it from shell and pass your question as an argument for one off questions:
 
-```$ chatgpt "What is the meaning of life?"```
+```$ genie "What is the meaning of life?"```
 
 ![chatgpt](https://imgur.com/3lqDq7M.gif)
 
 Or by calling the alias without argument to enter an interactive chat with ChatGPT:
 
-```$ chatgpt```
+```$ genie ```
 
 ![chatgpt-interactive](https://imgur.com/kJTBOPB.gif)
 
