@@ -18,9 +18,7 @@ You can switch API model using the `--model` argument (note that running without
 
 ### Description
 
-Simple python implementation of OpenAI's ChatGPT intergrated into your shell, leveraging natural language processing and low temperature parameters for focused responses from ChatGPT.
-
-The interaction can be either calling ChatGPT from shell for one off questions, or entering into an interactive chat with ChatGPT.
+Simple python implementation of OpenAI's ChatGPT intergrated into your shell - interaction can be either calling genie from shell for one off questions, or entering into an interactive chat with genie.
 
 ### Dependencies
 
