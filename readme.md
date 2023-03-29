@@ -6,6 +6,10 @@ OpenAI's ChatGPT integrated into your shell.
 
 ![](https://imgur.com/J7YOzSz.png)
 
+### Note
+
+I have changed the default model to ChatGPT 4 - I would recommend switching it to `gpt-3.5-turbo` for a more fluent experience. Other API models can be seen here: [OpenAI ChatGPT API Models](https://platform.openai.com/docs/models)
+
 ### Description
 
 Simple python implementation of OpenAI's ChatGPT intergrated into your shell, leveraging natural language processing and low temperature parameters for focused responses from ChatGPT.
