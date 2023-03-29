@@ -6,9 +6,15 @@ OpenAI's ChatGPT integrated into your shell.
 
 ![](https://imgur.com/J7YOzSz.png)
 
-### Note
+### Note ChatGPT4 - Limited Access Beta
 
-I have changed the default model to ChatGPT 4 - I would recommend switching it to `gpt-3.5-turbo` for a more fluent experience. Other API models can be seen here: [OpenAI ChatGPT API Models](https://platform.openai.com/docs/models)
+I have changed the default model to ChatGPT 4 - I would recommend switching it to `gpt-3.5-turbo` for a more fluent experience. 
+
+You can switch API model using the `model` argument (note that running without this argument will use gpt-4)
+
+```$ genie --model gpt-3.5-turbo```
+
+`model` will also accept *code-davinci-002* & *text-davinci-003* - other API models can be seen here [OpenAI ChatGPT API Models](https://platform.openai.com/docs/models) and added as required to the script.
 
 ### Description
 
@@ -26,7 +32,7 @@ The interaction can be either calling ChatGPT from shell for one off questions, 
 
 ### Installing
 
-* Clone the repo and copy *chatgpt-prompt.py* to a permanent location.
+* Clone the repo and copy *genie.py* to a permanent location.
 
 * Open the script and amend `openai.api_key = "API_KEY"` with your aforementioned API key and save.
 
