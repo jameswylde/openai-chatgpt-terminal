@@ -1,48 +1,40 @@
 import openai
 import sys
-import spacy
+import random
+import string
 import colorama
-from colorama import Fore
+from extras import greeting, lamp
+from colorama import Fore, Back, Style
 
 openai.api_key = "API_KEY"
 
 messages = []
 
-# Using Spacy module, load english language model to assist with natural language processing
-nlp = spacy.load('en_core_web_sm')
+randomgreeting = random.choice(greeting)
 
 if len(sys.argv) > 1:
-    # If there is a command line argument, join all the arguments into a single string
-    prompt = " ".join(sys.argv[1:])
+    prompt = " ".join(sys.argv[1:]).rstrip(string.punctuation)
 else:
-    print(Fore.YELLOW + "\nChatGPT: " + "How can I help?\n")
-    prompt = input(Fore.BLUE + "You: ")
-
-    # Extract noun phrases from the input prompt and join into a single string
-    prompt_doc = nlp(prompt)
-    prompt_noun_phrases = [chunk.text for chunk in prompt_doc.noun_chunks]
-    prompt = " ".join(prompt_noun_phrases)
-
+    print(Fore.YELLOW + lamp)
+    print(Fore.YELLOW + "\nGenie: " + randomgreeting + "\n")
+    prompt = input(Fore.BLUE + "Master: ")
 while True:
-            if prompt.lower() in ["quit","q", "bye"]:
-                print(Fore.YELLOW + "\nChatGPT: " + "Bye")
-                break
-            messages.append({"role": "user", "content": prompt})
-            # Using GPT-3.5-turbo model with a temperature of 0.5 for more focused response
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                temperature=0.7,
-                messages=messages)
-            reply = response["choices"][0]["message"]["content"]
+    if prompt.lower() in ["quit", "q", "bye"]:
+        print(Fore.YELLOW + "\nGenie: " + "Farewell, master. Until you drag me out of bed again...\n")
+        break
 
-            reply_doc = nlp(reply)
-            reply_noun_phrases = [chunk.text for chunk in reply_doc.noun_chunks]
-            prompt = " ".join(reply_noun_phrases)
+    messages.append({"role": "user", "content": prompt})
+    response = openai.ChatCompletion.create(
+        model="gpt-4",  # Replace with the GPT-4 model name
+        messages=messages,
+        temperature=0.7)
+    reply = response["choices"][0]["message"]["content"]
 
-            messages.append({"role": "assistant", "content": reply})
-            print(Fore.YELLOW + "\nChatGPT: " + reply + "\n")
+    messages.append({"role": "assistant", "content": reply})
+    print(Fore.YELLOW + "\nGenie: " + reply + "\n")
+    
+    if len(sys.argv) > 1:
+            break
+    else:
+            prompt = input(Fore.BLUE + "Master: ")
 
-            if len(sys.argv) > 1:
-                break
-            else:
-                prompt = input(Fore.BLUE + "You: ")
