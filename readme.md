@@ -8,11 +8,11 @@ OpenAI's ChatGPT integrated into your shell.
 
 ### Note ChatGPT4 - Limited Access Beta
 
-I have changed the default model to ChatGPT 4 - I would recommend switching it to `gpt-3.5-turbo` for a more fluent experience. 
+Despite the release of ChatGPT4, the default model used here is `gpt-3.5-turbo` for a more fluent experience as its replies are much faster and API pricing is significantly cheaper.
 
-You can switch API model using the `--model` argument (note that running without this argument will use gpt-4)
+You can switch API model using the `--model` argument (run without `--model` to use the default model) if you'd like to to use gpt-4:
 
-```$ genie --model gpt-3.5-turbo```
+```$ genie --model gpt-4```
 
 `--model` will also accept *code-davinci-002* & *text-davinci-003* - other API models can be seen here [OpenAI ChatGPT API Models](https://platform.openai.com/docs/models) and added as required to the script.
 
