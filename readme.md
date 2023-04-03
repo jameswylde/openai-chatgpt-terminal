@@ -2,7 +2,7 @@
 
 OpenAI's ChatGPT integrated into your shell.
 
-![](https://imgur.com/8fapNYr.png)
+![](https://imgur.com/2WDy29Y.png)
 
 ### Note ChatGPT4 - Limited Access Beta
 
