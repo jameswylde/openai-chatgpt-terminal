@@ -49,9 +49,8 @@ Or by calling the alias without argument to enter an interactive chat with ChatG
 
 ![genie-interactive](https://imgur.com/8fapNYr.png)
 
+To end the interactive chat, use either `bye`,`quit`,`q` or `ctrl+c`.
+
 ### Example of using gpt-4 model for depth
 
 ![](https://imgur.com/8Ctreh3.png)
-
-
-To end the interactive chat, use either `bye`,`quit`,`q` or `ctrl+c`.
