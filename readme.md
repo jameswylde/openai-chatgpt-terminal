@@ -1,6 +1,4 @@
-## ChatGPT in your shell
-
-![](https://imgur.com/EnPhBmE.png)
+## ChatGPT in your terminal
 
 OpenAI's ChatGPT integrated into your shell.
 
@@ -50,7 +48,6 @@ Or by calling the alias without argument to enter an interactive chat with ChatG
 ```$ genie ```
 
 ![genie-interactive](https://imgur.com/8fapNYr.png)
-
 
 ### Example of using gpt-4 model for depth
 
