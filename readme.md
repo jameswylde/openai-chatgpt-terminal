@@ -47,7 +47,7 @@ Or by calling the alias without argument to enter an interactive chat with ChatG
 
 ```$ genie ```
 
-![genie-interactive](https://imgur.com/2WDy29Y.png)
+![genie-interactive](https://imgur.com/40kRhBe.png)
 
 To end the interactive chat, use either `bye`,`quit`,`q` or `ctrl+c`.
 
