@@ -1,10 +1,10 @@
 ## ChatGPT in your shell
 
-![](https://imgur.com/JphOx3D.png)
+![](https://imgur.com/EnPhBmE.png)
 
 OpenAI's ChatGPT integrated into your shell.
 
-![](https://imgur.com/J7YOzSz.png)
+![](https://imgur.com/8fapNYr.png)
 
 ### Note ChatGPT4 - Limited Access Beta
 
@@ -18,7 +18,7 @@ You can switch API model using the `--model` argument (run without `--model` to 
 
 ### Description
 
-Simple python implementation of OpenAI's ChatGPT intergrated into your shell - interaction can be either calling genie from shell for one off questions, or entering into an interactive chat with genie.
+Python implementation of OpenAI's ChatGPT intergrated into your shell - interaction can be either calling genie from shell for one off questions, or entering into an interactive chat with genie. There are some chat prompts to use for more honed responses - these can be added or amended in `prompts.py`
 
 ### Dependencies
 
@@ -41,15 +41,20 @@ Simple python implementation of OpenAI's ChatGPT intergrated into your shell - i
 
 Using your chosen alias you can call it from shell and pass your question as an argument for one off questions:
 
-```$ genie "What is the meaning of life?"```
+```$ genie "Recommend a python module for LP and link documentation?"```
 
-![chatgpt](https://imgur.com/3lqDq7M.gif)
+![genie](https://imgur.com/JYfwkd7.png)
 
 Or by calling the alias without argument to enter an interactive chat with ChatGPT:
 
 ```$ genie ```
 
-![chatgpt-interactive](https://imgur.com/kJTBOPB.gif)
+![genie-interactive](https://imgur.com/8fapNYr.png)
+
+
+### Example of using gpt-4 model for depth
+
+![](https://imgur.com/8Ctreh3.png)
 
 
 To end the interactive chat, use either `bye`,`quit`,`q` or `ctrl+c`.
