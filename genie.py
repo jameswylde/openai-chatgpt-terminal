@@ -5,6 +5,7 @@ import string
 import colorama
 import shutil
 import argparse
+import readline
 from extras import greeting, lamp
 from prompts import prompts
 from colorama import Fore, Back, Style
@@ -28,12 +29,13 @@ def display_prompt_menu():
         padded_prompt = formatted_prompt.center(column_width)
         formatted_prompts.append(padded_prompt)
 
-    print(Fore.YELLOW + "Choose a prompt, type your question, or 'q' to quit:\n".center(term_width))
+    print(Fore.YELLOW + "Choose a prompt, type your question, or 'q' to quit:".center(term_width) + "\n")
+    print(Fore.YELLOW + "=" * term_width)
     for i, formatted_prompt in enumerate(formatted_prompts):
         print(Fore.YELLOW + formatted_prompt, end="")
         if (i + 1) % num_columns == 0 and i != len(formatted_prompts) - 1:
             print()
-    print("\n")
+    print(Fore.YELLOW + "\n" + "=" * term_width + Style.RESET_ALL)
 
 def center_multiline_string(s):
     term_width = shutil.get_terminal_size((80, 20)).columns
@@ -46,6 +48,17 @@ def center_multiline_string(s):
 
     return '\n'.join(centered_lines)
 
+def get_user_input(prompt):
+    try:
+        return input(prompt)
+    except (EOFError, KeyboardInterrupt):
+        return 'q'
+
+def print_centered_no_newline(text):
+    term_width = shutil.get_terminal_size((80, 20)).columns
+    padding_left = (term_width - len(text)) // 2
+    print(" " * padding_left + text, end="")
+
 args = parse_args()
 
 messages = []
@@ -57,13 +70,14 @@ if args.question:
 else:
     print(Fore.YELLOW + center_multiline_string(lamp))
     print(Fore.YELLOW + center_multiline_string(randomgreeting) + "\n")
-    
+
     display_prompt_menu()
-    user_input = input(Fore.BLUE + "Ask me any question, choose '1-9', or 'q': ".center(shutil.get_terminal_size((80, 20)).columns)).strip()
-    if user_input.isdigit() and 1 <= int(user_input) <= len(prompts):
-        prompt = prompts[int(user_input) - 1]
+    print_centered_no_newline(Fore.BLUE + "Ask me any question, choose '1-9', or 'q': ")
+    user_input = get_user_input("")
+    if user_input.strip().isdigit() and 1 <= int(user_input.strip()) <= len(prompts):
+        prompt = prompts[int(user_input.strip()) - 1]
     else:
-        prompt = user_input
+        prompt = user_input.strip()
 
 while True:
     if prompt.lower() in ["quit", "q", "bye"]:
@@ -83,10 +97,10 @@ while True:
     if args.question:
         break
     else:
-        prompt = input(Fore.BLUE + "Master: ")
+        prompt = get_user_input(Fore.BLUE + "Master: ")
         if prompt.lower() == "menu":
             display_prompt_menu()
-            user_input = input(Fore.BLUE + "Prompt (1-9), custom question, or 'q': ".center(shutil.get_terminal_size((80, 20)).columns)).strip()
+            user_input = get_user_input(Fore.BLUE + "Prompt (1-9), custom question, or 'q': ".center(shutil.get_terminal_size((80, 20)).columns)).strip()
             if user_input.isdigit() and 1 <= int(user_input) <= len(prompts):
                 prompt = prompts[int(user_input) - 1]
             else:
