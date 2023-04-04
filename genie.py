@@ -6,8 +6,8 @@ import colorama
 import shutil
 import argparse
 import readline
-from extras import greeting, lamp
-from prompts import prompts
+from src.extras import greeting, lamp
+from src.prompts import prompts
 from colorama import Fore, Back, Style
 
 """
