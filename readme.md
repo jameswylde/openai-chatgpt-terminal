@@ -18,7 +18,7 @@ Python implementation of OpenAI's ChatGPT intergrated into your shell - interact
 
 ### Installing
 
-* Clone the repo and copy *genie.py* to a permanent location.
+* Clone the repo and copy the folder to a permanent location (including the /src/ folder).
 
 * Open the script and amend `openai.api_key = "API_KEY"` with your aforementioned API key and save.
 
