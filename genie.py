@@ -15,7 +15,6 @@ Genie: A Python implementation of OpenAI's ChatGPT integrated into your shell.
 Interact with the model interactively or pass questions to it from the terminal.
 Supports custom prompts for honed interaction and switching of API model.
 """
-
 def main():
     openai.api_key = "API_KEY"
 
@@ -37,7 +36,7 @@ def main():
             padded_prompt = formatted_prompt.center(column_width)
             formatted_prompts.append(padded_prompt)
 
-        print(Fore.YELLOW + "Choose a prompt, type your question, or 'q' to quit:".center(term_width) + "\n")
+        print(Fore.YELLOW + "Ask a question, choose a prompt, or 'q' to quit:".center(term_width) + "\n")
         print(Fore.YELLOW + "=" * term_width)
         for i, formatted_prompt in enumerate(formatted_prompts):
             print(Fore.YELLOW + formatted_prompt, end="")
@@ -80,8 +79,8 @@ def main():
         print(Fore.YELLOW + center_multiline_string(randomgreeting) + "\n")
 
         display_prompt_menu()
-        print_centered_no_newline(Fore.BLUE + "Ask me a question, choose '1-9', or 'q': ")
-        user_input = get_user_input("")
+        print_centered_no_newline(Fore.BLUE + "You: ")
+        user_input = get_user_input(Fore.BLUE + "")
         if user_input.strip().isdigit() and 1 <= int(user_input.strip()) <= len(prompts):
             prompt = prompts[int(user_input.strip()) - 1]
         else:
@@ -105,7 +104,7 @@ def main():
         if args.question:
             break
         else:
-            prompt = get_user_input(Fore.BLUE + "Master: ")
+            prompt = get_user_input(Fore.BLUE + "You: ")
             if prompt.lower() == "menu":
                 display_prompt_menu()
                 user_input = get_user_input(Fore.BLUE + "Prompt (1-9), custom question, or 'q': ".center(shutil.get_terminal_size((80, 20)).columns)).strip()
