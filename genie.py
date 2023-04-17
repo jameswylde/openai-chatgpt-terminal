@@ -21,7 +21,7 @@ def main():
     openai.api_key = "API_KEY"
 
     def parse_args():
-        parser = argparse.ArgumentParser(description="Genie: Interact with ChatGPT")
+        parser = argparse.ArgumentParser(description="Genie: Chat with ChatGPT")
         parser.add_argument(
             "--model",
             default="gpt-3.5-turbo",
