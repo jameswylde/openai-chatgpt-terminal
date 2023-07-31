@@ -55,6 +55,3 @@ You can switch temperature using the `--temp` argument (run without `--temp` to 
 
 To end the interactive chat, use either `bye`,`quit`,`q` or `ctrl+c`.
 
-### Example of using gpt-4 model for depth
-
-![](https://imgur.com/8Ctreh3.png)
